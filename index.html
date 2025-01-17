@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag 'n' Drop</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+<body class="flex flex-col min-h-screen bg-gray-800 text-white" style="background-image: url('img/cosmere_wp.png'); background-size: cover; background-repeat: no-repeat; background-position: center;">
+
+<header class="bg-gray-700 p-6 flex items-center shadow-lg">
+    <img src="img/Brass.svg" class="h-16 w-16 rounded-full mr-4" alt="Brass Logo">
+    <h1 class="text-white text-2xl font-semibold">Adventure in the Cosmere</h1>
+</header>
+
+<main class="flex-grow" id="main-content">
+    <div class="flex flex-col md:flex-row items-center text-center md:text-left mt-8 p-6 bg-gray-600 shadow-md rounded-lg max-w-none mx-auto">
+        <div class="flex-1 flex flex-col items-center md:items-start">
+            <h1 class="text-3xl font-bold text-white mb-2">Your Adventure Begins!</h1>
+
+            <p class="text-lg text-gray-300 mb-6">
+                You are a traveler on the world of <span id="blank1" class="border-dashed border-2 border-gray-300 px-2 py-1 bg-gray-500 inline-block" ondrop="drop(event, 'blank1', 'world')" ondragover="allowDrop(event)">???</span>, ready to take action to save the world from the evil forces that threaten it. You, as the leader of the rebellion, gather <span id="blank2" class="border-dashed border-2 border-gray-300 px-2 py-1 bg-gray-500 inline-block" ondrop="drop(event, 'blank2', 'item')" ondragover="allowDrop(event)">???</span> to help you in your quest. But you won't use that item. Your dear friend and warrior <span id="blank3" class="border-dashed border-2 border-gray-300 px-2 py-1 bg-gray-500 inline-block" ondrop="drop(event, 'blank3', 'character')" ondragover="allowDrop(event)">???</span> will take care of the big picture. Let the battle begin!
+            </p>
+
+            <div class="flex flex-col md:flex-row items-center text-center md:text-left mt-4 p-4 bg-gray-700 shadow-md rounded-lg space-y-4 md:space-y-0 md:space-x-4">
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-2">Choose Your World:</h3>
+                    <div id="world-options" class="flex space-x-2">
+                        <span id="roshar" class="draggable-option world" draggable="true" ondragstart="drag(event)">Roshar</span>
+                        <span id="scadrial" class="draggable-option world" draggable="true" ondragstart="drag(event)">Scadrial</span>
+                        <span id="nalthis" class="draggable-option world" draggable="true" ondragstart="drag(event)">Nalthis</span>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-2">Choose Your Item:</h3>
+                    <div id="item-options" class="flex space-x-2">
+                        <span id="lerasium" class="draggable-option item" draggable="true" ondragstart="drag(event)">Lerasium</span>
+                        <span id="nightblood" class="draggable-option item" draggable="true" ondragstart="drag(event)">Nightblood</span>
+                        <span id="biochromatic" class="draggable-option item" draggable="true" ondragstart="drag(event)">Biochromatic Breath</span>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-2">Choose Your Character:</h3>
+                    <div id="character-options" class="flex space-x-2">
+                        <span id="kelsier" class="draggable-option character" draggable="true" ondragstart="drag(event)">Kelsier</span>
+                        <span id="szeth" class="draggable-option character" draggable="true" ondragstart="drag(event)">Szeth</span>
+                        <span id="hoid" class="draggable-option character" draggable="true" ondragstart="drag(event)">Hoid</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-6">
+                <button id="next-button" class="bg-blue-500 text-white px-6 py-3 rounded-lg font-medium text-lg shadow-md hover:bg-blue-600 transition" onclick="proceedToOutcome()" disabled>
+                    Next
+                </button>
+                <button class="bg-red-500 text-white px-6 py-3 rounded-lg font-medium text-lg shadow-md hover:bg-red-600 transition ml-4" onclick="resetContent()">
+                    Reset
+                </button>
+            </div>
+        </div>
+
+        <div class="flex-1 flex items-center justify-center w-full max-w-none relative">
+            <img id="adventure-image" src="img/default.jpg" alt="Adventure Image" class="w-[768px] h-[768px] rounded-lg shadow-md object-cover">
+            <div id="overlay-container" class="absolute inset-0 pointer-events-none"></div>
+        </div>        
+</main>
+
+
+<footer class="bg-gray-700 text-white text-center py-4 mt-8">
+    <p class="text-sm">© 2025 Adventure in the Cosmere. All rights reserved.</p>
+    <p class="text-sm">MAKE RESET ADVENTURE WORK BUTTON. MAKE EVERY 27 COMBINATION STORY. MAKE THE IMAGES SHOW. MAKE AN INDEX INTRODUCTION, SEND THE GUY TO HERE THOUGH, NOT SAME PAGE.</p>
+</footer>
+
+</body>
+</html>

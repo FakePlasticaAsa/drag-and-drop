@@ -1,0 +1,45 @@
+.draggable-option {
+    padding: 8px 12px;
+    background-color: #4a5568;
+    color: #fff;
+    border-radius: 4px;
+    cursor: grab;
+    font-size: 0.875rem;
+    font-weight: 500;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.draggable-option:hover {
+    background-color: #2d3748;
+}
+
+.draggable-option:active {
+    cursor: grabbing;
+}
+
+#adventure-image {
+    width: 768px; /* Fixed width */
+    height: 768px; /* Fixed height */
+    object-fit: cover; /* Ensure the image fits nicely */
+}
+#overlay-container {
+position: absolute;
+inset: 0; /* Full size of the image container */
+pointer-events: none; /* Prevent interaction */
+}
+.item-overlay {
+position: absolute;
+bottom: 10px; /* Adjust to place items at the bottom-right */
+right: 10px;
+width: 300px;
+height: 500px;
+}
+
+.character-overlay {
+position: absolute;
+bottom: 10px; /* Adjust to place characters at the bottom-left */
+left: 10px;
+width: 300px;
+height: 300px;
+}
+
